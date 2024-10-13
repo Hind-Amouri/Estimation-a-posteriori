@@ -1,7 +1,7 @@
 # Estimation-a-posteriori
 
 # Motivations
-Ce projet est basé sur un cours qui se concentre sur la modélisation numérique à l'aide des équations aux dérivées partielles (EDP). Après un rappel des fondamentaux, les principaux objectifs sont les suivants :
+Ce projet est basé sur un cours qui se concentre sur la modélisation numérique à l'aide des équations aux dérivées partielles (EDP).Les principaux objectifs sont les suivants :
 
 Modélisation d’un problème d’advection-diffusion-réaction-production pour un scalaire passif.
 Discrétisation du problème sur un maillage à pas variable pour des solutions stationnaires.
