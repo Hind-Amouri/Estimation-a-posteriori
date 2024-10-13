@@ -1,0 +1,471 @@
+## Séance 2 : Étude du code adrs.py et Résolution de l'équation
+
+### Objectifs :
+- Résoudre l'équation \( u_t + v u_s - \nu u_{ss} + \lambda u = f(s) \)
+- Vérifier la convergence vers la solution stationnaire
+- Calculer les erreurs \( L2 \) et \( H1 \)
+- Étudier la condition CFL et implémenter la condition aux frontières \( u_s(s=L) = 0 \)
+
+### Maillage :
+- Discrétisation uniforme du domaine avec \( N \) points.
+
+### Schéma numérique :
+- Implémentation du schéma explicite pour résoudre l'équation.
+- Conditions initiales et aux limites.
+
+### Résultats :
+- Tracé des courbes de convergence et d'erreur pour différents maillages.
+Contenu de la séance 2 :
+Étudier et comprendre le code adrs.py :
+
+Le code résout l'équation suivante :
+
+𝑢
+𝑡
++
+𝑣
+𝑢
+𝑠
+−
+𝜈
+𝑢
+𝑠
+𝑠
++
+𝜆
+𝑢
+=
+𝑓
+(
+𝑠
+)
+u 
+t
+​
+ +vu 
+s
+​
+ −νu 
+ss
+​
+ +λu=f(s)
+Avec :
+
+𝑣
+=
+1
+v=1
+𝜈
+=
+0.01
+ν=0.01
+𝜆
+=
+1
+λ=1
+Domaine : 
+𝐿
+=
+1
+L=1
+Forme exacte de 
+𝑢
+(
+𝑠
+)
+u(s) : Tu dois prendre 
+𝑢
+(
+𝑠
+)
+=
+exp
+⁡
+(
+−
+10
+(
+𝑠
+−
+𝐿
+/
+2
+)
+2
+)
+u(s)=exp(−10(s−L/2) 
+2
+ ), puis en déduire 
+𝑓
+(
+𝑠
+)
+f(s) à partir de l'équation donnée.
+
+Implémenter 
+𝑓
+(
+𝑠
+)
+f(s) dans le code adrs.py :
+
+Pour déterminer 
+𝑓
+(
+𝑠
+)
+f(s), tu dois calculer la dérivée temporelle et spatiale de 
+𝑢
+(
+𝑠
+)
+u(s) et les insérer dans l’équation.
+Ensuite, implémente 
+𝑓
+(
+𝑠
+)
+f(s) dans le code à l'endroit où la force source est définie.
+Vérification : Après l'implémentation de 
+𝑓
+(
+𝑠
+)
+f(s), il faut vérifier si le code retrouve bien la solution exacte 
+𝑢
+ex
+(
+𝑠
+)
+u 
+ex
+​
+ (s).
+Maillage uniforme et convergence :
+
+Discrétise l’intervalle 
+[
+0
+,
+𝐿
+]
+[0,L] en 
+𝑁
+N points uniformes avec un pas 
+ℎ
+=
+𝐿
+/
+(
+𝑁
+−
+1
+)
+h=L/(N−1).
+Pour vérifier la convergence vers la solution stationnaire, utilise un maillage de 100 points.
+Trace la norme de la différence 
+∣
+∣
+𝑢
+𝑛
++
+1
+−
+𝑢
+𝑛
+∣
+∣
+𝐿
+2
+∣∣u 
+n+1
+ −u 
+n
+ ∣∣ 
+L2
+​
+ , ce qui montrera la convergence vers la solution stationnaire.
+Normes 
+𝐿
+2
+L2 et 
+𝐻
+1
+H1 après convergence :
+
+Calcul des erreurs : Après la convergence, tu calculeras les normes 
+𝐿
+2
+L2 et 
+𝐻
+1
+H1 entre la solution numérique et la solution exacte pour différents maillages (par exemple : 3, 5, 10, 50, 100 points).
+Tracer l’erreur : Trace les erreurs 
+𝐿
+2
+L2 et 
+𝐻
+1
+H1 en fonction de 
+ℎ
+h.
+Conditions aux limites :
+
+Implémente la condition 
+𝑢
+𝑠
+(
+𝑠
+=
+𝐿
+)
+=
+0
+u 
+s
+​
+ (s=L)=0 dans le code.
+Implémentation dans le code adrs.py :
+1. Calcul de 
+𝑓
+(
+𝑠
+)
+f(s) :
+Soit la solution exacte :
+
+𝑢
+ex
+(
+𝑠
+)
+=
+exp
+⁡
+(
+−
+10
+(
+𝑠
+−
+𝐿
+/
+2
+)
+2
+)
+u 
+ex
+​
+ (s)=exp(−10(s−L/2) 
+2
+ )
+Tu dois calculer les dérivées nécessaires :
+
+𝑢
+𝑠
+=
+−
+20
+(
+𝑠
+−
+𝐿
+/
+2
+)
+exp
+⁡
+(
+−
+10
+(
+𝑠
+−
+𝐿
+/
+2
+)
+2
+)
+u 
+s
+​
+ =−20(s−L/2)exp(−10(s−L/2) 
+2
+ )
+𝑢
+𝑠
+𝑠
+=
+(
+400
+(
+𝑠
+−
+𝐿
+/
+2
+)
+2
+−
+20
+)
+exp
+⁡
+(
+−
+10
+(
+𝑠
+−
+𝐿
+/
+2
+)
+2
+)
+u 
+ss
+​
+ =(400(s−L/2) 
+2
+ −20)exp(−10(s−L/2) 
+2
+ )
+Pour trouver 
+𝑓
+(
+𝑠
+)
+f(s), substitue 
+𝑢
+(
+𝑠
+)
+u(s), 
+𝑢
+𝑠
+(
+𝑠
+)
+u 
+s
+​
+ (s), et 
+𝑢
+𝑠
+𝑠
+(
+𝑠
+)
+u 
+ss
+​
+ (s) dans l’équation :
+
+𝑓
+(
+𝑠
+)
+=
+𝑢
+𝑡
++
+𝑣
+𝑢
+𝑠
+−
+𝜈
+𝑢
+𝑠
+𝑠
++
+𝜆
+𝑢
+f(s)=u 
+t
+​
+ +vu 
+s
+​
+ −νu 
+ss
+​
+ +λu
+Puis implémente cette expression dans le code.
+
+2. Maillage uniforme :
+Dans le code, tu peux créer un maillage uniforme comme suit :
+N = 100  # Nombre de points
+L = 1.0  # Longueur du domaine
+h = L / (N - 1)  # Pas de maillage
+s = np.linspace(0, L, N)  # Maillage uniforme
+
+3. Tracer la convergence :
+Après avoir résolu le problème pour plusieurs itérations, trace la convergence 
+∣
+∣
+𝑢
+𝑛
++
+1
+−
+𝑢
+𝑛
+∣
+∣
+𝐿
+2
+∣∣u 
+n+1
+ −u 
+n
+ ∣∣ 
+L2
+​
+  pour voir si la solution stationnaire est atteinte.
+
+Exemple de code pour tracer la convergence :
+norm_L2_diff = np.linalg.norm(u_next - u_prev)
+plt.plot(time_steps, norm_L2_diff / np.linalg.norm(u_exact), label="Convergence L2")
+plt.xlabel('Temps')
+plt.ylabel('Convergence ||u^{n+1} - u^n||_{L2}')
+plt.legend()
+plt.show()
+4. Calcul et tracé des erreurs 
+𝐿
+2
+L2 et 
+𝐻
+1
+H1 :
+Après la convergence, tu peux comparer la solution numérique avec la solution exacte en calculant les normes 
+𝐿
+2
+L2 et 
+𝐻
+1
+H1 pour différents maillages.
+
+Exemple pour calculer la norme 
+𝐿
+2
+L2 :
+error_L2 = np.sqrt(np.sum((u_exact - u_numeric)**2) * h)
+Pour le tracé des erreurs en fonction de 
+ℎ
+h : 
+h_values = [h1, h2, h3, h4, h5]  # Différents pas de maillage
+error_L2_values = [error_L2_h1, error_L2_h2, ...]
+error_H1_values = [error_H1_h1, error_H1_h2, ...]
+
+plt.plot(h_values, error_L2_values, label="Erreur L2")
+plt.plot(h_values, error_H1_values, label="Erreur H1")
+plt.xlabel('Pas de maillage (h)')
+plt.ylabel('Erreur')
+plt.legend()
+plt.show()
+5.Conditions de stabilité et schéma numérique :
+Décentrage et viscosité numérique : Dans le code adrs.py, vérifie comment les termes du schéma numérique sont calculés et où la viscosité numérique est ajoutée pour stabiliser le schéma. Cela se trouve généralement dans les chapitres du livre mentionnés (chapitres 10 et 12).
+Condition CFL : Analyse comment la condition CFL est implémentée et quelles sont les conditions actuelles aux frontières.
