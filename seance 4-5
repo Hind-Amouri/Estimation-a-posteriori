@@ -1,0 +1,24 @@
+## Séance 4-5 : Adaptation Instationnaire avec un Terme Source Dépendant du Temps
+
+### Objectifs :
+- Modifier le code pour prendre en compte un terme source dépendant du temps \( f(s,t) \) pour une solution \( u(t)v(s) = \sin(4\pi t)v(s) \).
+- Visualiser la solution à différents instants de temps \( t \).
+- Introduire un critère d'arrêt mixte basé sur l'erreur \( L2 \) et le nombre de points du maillage.
+- Mettre en place un maillage adaptatif avec contrôle de métrique basé sur la solution finale en \( t = Time \).
+- Introduire l'adaptation instationnaire en prenant la moyenne temporelle des métriques.
+
+### Méthodologie :
+1. **Terme source dépendant du temps :**
+   - Le terme source \( f(s,t) \) a été implémenté en fonction de la solution \( u(t)v(s) = \sin(4\pi t)v(s) \).
+   
+2. **Visualisation :**
+   - La solution a été visualisée à plusieurs instants clés, notamment \( t = 0.1s \), \( t = 0.5s \), \( t = 1.0s \).
+
+3. **Critère d'arrêt :**
+   - Un critère d'arrêt mixte a été ajouté pour garantir que l'adaptation ne s'arrête pas tant que les conditions sur l'erreur et le nombre de points ne sont pas remplies.
+
+4. **Adaptation instationnaire :**
+   - L'adaptation du maillage est guidée par une métrique temporelle moyenne, en prenant en compte la variation de la solution au fil du temps.
+
+### Résultats :
+- Le maillage adaptatif en instationnaire a été analysé avec des critères de convergence basés sur la solution finale et la moyenne temporelle des métriques.
