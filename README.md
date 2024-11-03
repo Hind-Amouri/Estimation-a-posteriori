@@ -12,10 +12,14 @@ Les EDP sont omniprésentes dans des disciplines telles que la physique, l'ingé
 
 Le projet vise à modéliser et résoudre numériquement des problèmes d'advection-diffusion-réaction pour un scalaire passif en mettant en œuvre des techniques avancées de discrétisation et d'adaptation de maillage. Les objectifs incluent :
 
-### Modélisation : Développement d’un modèle d’advection-diffusion-réaction pour des solutions stationnaires et instationnaires.
-### Estimation d’Erreur : Utilisation de méthodes a posteriori pour estimer l'erreur de discrétisation.
-### Adaptation de Maillage : Application de contrôles de métrique pour adapter dynamiquement le maillage en fonction de l'erreur locale.
-### Optimisation de Contrôle : Optimisation de la distribution de sources pour un scalaire passif en contrôlant les sources pour minimiser l'erreur par rapport à une solution cible.
+### Modélisation : 
+Développement d’un modèle d’advection-diffusion-réaction pour des solutions stationnaires et instationnaires.
+### Estimation d’Erreur :
+Utilisation de méthodes a posteriori pour estimer l'erreur de discrétisation.
+### Adaptation de Maillage : 
+Application de contrôles de métrique pour adapter dynamiquement le maillage en fonction de l'erreur locale.
+### Optimisation de Contrôle : 
+Optimisation de la distribution de sources pour un scalaire passif en contrôlant les sources pour minimiser l'erreur par rapport à une solution cible.
 
 ---
 
@@ -154,7 +158,20 @@ Cette séance se concentre sur l'optimisation des paramètres d'algorithme et su
   - **Développement** : Évaluer l'impact des choix d'optimisation et des techniques de visualisation sur la compréhension des phénomènes modélisés.
 
 ---
+## Résultats
+Les scripts de ce dépôt génèrent divers graphiques et visualisations, notamment :
 
+### Convergence : 
+Analyse de la convergence des solutions numériques par rapport aux solutions exactes.
+### Évolution de l'erreur : 
+Visualisation de l'évolution de l'erreur L2 et 𝐻1 en fonction du pas de maillage.
+### Adaptation de Maillage : 
+Comparaison de la distribution du maillage pour les solutions stationnaires et instationnaires à différents instants.
+### Optimisation de Contrôle :
+Visualisation des résultats de l’optimisation de la distribution des sources pour atteindre une solution cible.
+
+
+---
 ## Conclusion
 Au terme de ces séances, une compréhension approfondie des méthodes d'analyse numérique pour les EDP a été développée. Les compétences acquises dans l'utilisation des outils de programmation, d'adaptation de maillage et d'optimisation des paramètres constituent un atout essentiel pour résoudre des problèmes complexes. La capacité à allier théorie et pratique renforce la préparation à des défis futurs dans le domaine des mathématiques appliquées.
 
