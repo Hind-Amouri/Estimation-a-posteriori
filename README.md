@@ -12,10 +12,10 @@ Les EDP sont omniprésentes dans des disciplines telles que la physique, l'ingé
 
 Le projet vise à modéliser et résoudre numériquement des problèmes d'advection-diffusion-réaction pour un scalaire passif en mettant en œuvre des techniques avancées de discrétisation et d'adaptation de maillage. Les objectifs incluent :
 
-Modélisation : Développement d’un modèle d’advection-diffusion-réaction pour des solutions stationnaires et instationnaires.
-Estimation d’Erreur : Utilisation de méthodes a posteriori pour estimer l'erreur de discrétisation.
-Adaptation de Maillage : Application de contrôles de métrique pour adapter dynamiquement le maillage en fonction de l'erreur locale.
-Optimisation de Contrôle : Optimisation de la distribution de sources pour un scalaire passif en contrôlant les sources pour minimiser l'erreur par rapport à une solution cible.
+### Modélisation : Développement d’un modèle d’advection-diffusion-réaction pour des solutions stationnaires et instationnaires.
+### Estimation d’Erreur : Utilisation de méthodes a posteriori pour estimer l'erreur de discrétisation.
+### Adaptation de Maillage : Application de contrôles de métrique pour adapter dynamiquement le maillage en fonction de l'erreur locale.
+### Optimisation de Contrôle : Optimisation de la distribution de sources pour un scalaire passif en contrôlant les sources pour minimiser l'erreur par rapport à une solution cible.
 
 ---
 
