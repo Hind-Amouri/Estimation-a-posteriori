@@ -161,7 +161,7 @@ Cette séance se concentre sur l'optimisation des paramètres d'algorithme et su
 ## Résultats
 Les scripts de ce dépôt génèrent divers graphiques et visualisations, notamment :
 
-### Convergence : 
+### Convergence :
 Analyse de la convergence des solutions numériques par rapport aux solutions exactes.
 ### Évolution de l'erreur : 
 Visualisation de l'évolution de l'erreur L2 et 𝐻1 en fonction du pas de maillage.
