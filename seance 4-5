@@ -1,24 +1,19 @@
-## Séance 4-5 : Adaptation Instationnaire avec un Terme Source Dépendant du Temps
+# Séances 4-5 : Adaptation de Maillage Instationnaire et Méthodes d’Intégration
 
-### Objectifs :
-- Modifier le code pour prendre en compte un terme source dépendant du temps \( f(s,t) \) pour une solution \( u(t)v(s) = \sin(4\pi t)v(s) \).
-- Visualiser la solution à différents instants de temps \( t \).
-- Introduire un critère d'arrêt mixte basé sur l'erreur \( L2 \) et le nombre de points du maillage.
-- Mettre en place un maillage adaptatif avec contrôle de métrique basé sur la solution finale en \( t = Time \).
-- Introduire l'adaptation instationnaire en prenant la moyenne temporelle des métriques.
+Dans ces séances, l’objectif est d’étendre le modèle d’adaptation de maillage pour des solutions instationnaires en modifiant le code et en analysant l'impact des différents schémas temporels et du maillage sur l'erreur.
 
-### Méthodologie :
-1. **Terme source dépendant du temps :**
-   - Le terme source \( f(s,t) \) a été implémenté en fonction de la solution \( u(t)v(s) = \sin(4\pi t)v(s) \).
-   
-2. **Visualisation :**
-   - La solution a été visualisée à plusieurs instants clés, notamment \( t = 0.1s \), \( t = 0.5s \), \( t = 1.0s \).
+## **Code `adrs_insta.py` : Solution Instationnaire avec Solution Exacte Cible Instationnaire**
+- Visualiser l’erreur au milieu et à la fin du calcul (temps T/2 et T) pour différents maillages uniformes.
+- Analyser l’évolution de l’erreur au point milieu du domaine pour divers schémas de Runge-Kutta (ordre 1 à 4).
 
-3. **Critère d'arrêt :**
-   - Un critère d'arrêt mixte a été ajouté pour garantir que l'adaptation ne s'arrête pas tant que les conditions sur l'erreur et le nombre de points ne sont pas remplies.
+## **Code `adrs_insta_multiple_mesh_adap.py` : Adaptation de Maillage avec Terme Source Dépendant du Temps**
+- Modification du code pour inclure un terme source temporel, défini par une solution exacte \( u(t, s) = u(t) v(s) \), avec :
+  - \( u(t)v(s) = \sin(4\pi t) v(s) \)
+  - \( u'v = 4\pi \cos(4\pi t) v(s) \)
+- Visualisation de la solution à divers instants pour une période de 1 seconde.
+- Introduction de critères d'arrêt mixtes basés sur le nombre de points de maillage et l'erreur \( L2 \).
+- Analyse du maillage adaptatif en utilisant une métrique basée sur la solution finale à \( t = \text{Time} \).
+- Inclusion de l’adaptation instationnaire avec une moyenne temporelle des métriques pour optimiser le maillage.
 
-4. **Adaptation instationnaire :**
-   - L'adaptation du maillage est guidée par une métrique temporelle moyenne, en prenant en compte la variation de la solution au fil du temps.
+---
 
-### Résultats :
-- Le maillage adaptatif en instationnaire a été analysé avec des critères de convergence basés sur la solution finale et la moyenne temporelle des métriques.
